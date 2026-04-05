@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Diginance
 
 A full-stack **personal finance dashboard**: track income and expenses, analyze trends, set monthly budgets, run recurring entries, export CSV reports, and view smart spending insights. Built as a **dark, SaaS-style** React client on a **JWT-secured** Express + MongoDB API.
@@ -234,6 +233,4 @@ ISC (see `package.json`). Adjust as needed for your distribution.
 ---
 
 **Diginance** — finance intelligence, end to end.
-=======
-# Diginance
->>>>>>> 45d6361c26d61b88a5c16829aae50d907fbfd55d
+
