@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --color-dig-bg: #020617;
+  --color-dig-surface: #0f172a;
+  --color-dig-elevated: #1e293b;
+  --color-dig-accent: #38bdf8;
+  --color-dig-accent-2: #a78bfa;
+  --color-dig-muted: #94a3b8;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply m-0 min-h-svh font-sans text-slate-100;
+    font-family: var(--font-sans);
+    background: radial-gradient(
+        ellipse 120% 80% at 50% -20%,
+        rgba(56, 189, 248, 0.12),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 80% 50% at 100% 50%,
+        rgba(167, 139, 250, 0.08),
+        transparent 50%
+      ),
+      linear-gradient(180deg, #0f172a 0%, #020617 45%, #020617 100%);
+    background-attachment: fixed;
+  }
+  #root {
+    @apply min-h-svh w-full;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Syne', ui-sans-serif, system-ui, sans-serif;
+  }
+  .glass-panel {
+    @apply rounded-2xl border border-white/10 bg-slate-900/40 shadow-xl backdrop-blur-xl;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      0 0 80px -20px rgba(56, 189, 248, 0.15);
+  }
+  .glow-ring {
+    box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25),
+      0 0 40px -10px rgba(56, 189, 248, 0.35),
+      0 0 80px -20px rgba(167, 139, 250, 0.2);
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-sky-300 via-violet-300 to-fuchsia-300 bg-clip-text text-transparent;
+  }
+}
