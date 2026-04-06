@@ -16,13 +16,24 @@ dbConnect();
 
 const app = express();
 
-const clientOrigin = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://diginance.vercel.app',
+];
+
 app.use(
   cors({
-    origin: clientOrigin,
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true,
-  }),
+  })
 );
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
